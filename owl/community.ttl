@@ -1,0 +1,77 @@
+# baseURI: http://data.sedgemoor.gov.uk/def/community/
+# imports: http://data.sedgemoor.gov.uk/def/pim/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/locn
+
+@prefix community:  <http://data.sedgemoor.gov.uk/def/community/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+community:
+      rdf:type owl:Ontology ;
+      rdfs:comment "An ontology for describing and characterizing communites."@en ;
+      rdfs:label "community ontology"@en ;
+      owl:imports <http://www.w3.org/ns/locn> , <http://data.sedgemoor.gov.uk/def/pim/> , <http://www.w3.org/2004/02/skos/core> , <http://purl.org/dc/terms/> .
+
+community:Community
+      rdf:type owl:Class ;
+      rdfs:comment "The class of communities.  A community is a collection of people that satisfy some criteria.  Two communities are different if their criteria are different even though they happen to contain the same members.  Two communities are the same if the criteria are the same, i.e. the same community can have different members at different times."@en ;
+      rdfs:label "Community"@en ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty community:communityClassification
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty <http://data.sedgemoor.gov.uk/def/impact/impactedBy>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty <http://purl.org/dc/terms/description>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty <http://purl.org/dc/terms/isPartOf>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty <http://purl.org/dc/terms/hasPart>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty <http://www.w3.org/ns/locn#location>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty rdfs:label
+              ] .
+
+community:CommunityClassification
+      rdf:type owl:Class ;
+      rdfs:comment ""@en ;
+      rdfs:label "Group classification"@en ;
+      rdfs:subClassOf skos:Concept .
+
+community:communityClassification
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The property :communityClassification is a  property that may be used to relate a community to a classification of people who are members of that community.   For example, members of a community might consist of 'mothers and toddlers' or 'the elderly' or football players."@en ;
+      rdfs:domain community:Community ;
+      rdfs:label "community classification"@en ;
+      rdfs:range community:CommunityClassification .
+
+community:communityClassificationScheme
+      rdf:type skos:ConceptScheme ;
+      rdfs:comment "A classification scheme for communities."@en ;
+      rdfs:label "community classification scheme"@en .

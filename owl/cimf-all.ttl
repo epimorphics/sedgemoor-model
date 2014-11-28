@@ -1,0 +1,15 @@
+# baseURI: http://data.sedgemoor.gov.uk/def/cimf-all
+# imports: http://data.sedgemoor.gov.uk/def/community/
+# imports: http://data.sedgemoor.gov.uk/def/pim/
+# imports: http://data.sedgemoor.gov.uk/def/project/
+
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.sedgemoor.gov.uk/def/cimf-all>
+      rdf:type owl:Ontology ;
+      rdfs:comment "This is a container ontology.  It defines no terms of its own.  It exists to collect the various ontology modules used by the Community Impact Mitigation Fund project into a single umbrella ontology."@en ;
+      rdfs:label "cimf-all"@en ;
+      owl:imports <http://data.sedgemoor.gov.uk/def/project/> , <http://data.sedgemoor.gov.uk/def/pim/> , <http://data.sedgemoor.gov.uk/def/community/> .
