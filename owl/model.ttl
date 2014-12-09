@@ -1,0 +1,38 @@
+# baseURI: http://data.sedgemoor.gov.uk/def/model/
+# imports: http://xmlns.com/foaf/0.1/
+
+# c14n-version: 3
+@prefix model: <http://data.sedgemoor.gov.uk/def/model/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+model:
+  rdf:type owl:Ontology ;
+  rdfs:comment "The model ontology is a placeholder for a common ontology defining a vocabulary for describing the modelling of phenomena.  It exists now to create a home the for the concept of a predication."@en ;
+  rdfs:label "model ontology"@en ;
+  owl:imports <http://xmlns.com/foaf/0.1/> ;
+.
+model:Prediction
+  rdf:type owl:Class ;
+  rdfs:comment "The class of predications.  A prediction is forcecast of some characteristic of the world.  For example a weather forecast is a prediction.  A prediction typically predicts some aspect of the world that will occur after the prediction is created."@en ;
+  rdfs:label "Prediction"@en ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty model:dependsOn ;
+    ] ;
+.
+model:dependsOn
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The property :dependsOn is a general purpose property that may relate one resource to another on which it is dependent.  For example, one prediction such as a rise in global temperature may depend on another prediction such as a forecast of of consumption of fossil fuels.   This property is very general and has domain or range constraints."@en ;
+  rdfs:label "depends on"@en ;
+.
+model:predictor
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The property :predictor relates a prediction to an agent that is asserting the prediction.  The assertor of a prediction need not be the developer or creator of the prediction, for example where a body commissions the development of a prediction."@en ;
+  rdfs:domain model:Prediction ;
+  rdfs:label "predictor"@en ;
+  rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+.
