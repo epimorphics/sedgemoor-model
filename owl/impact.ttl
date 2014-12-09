@@ -85,6 +85,7 @@ impact:broaderImpact
 impact:hasImpact
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :hasImpact is a general purpose property that relates a resource, such as a project, to an impact of that resource."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "has impact"@en ;
   rdfs:range impact:Impact ;
   owl:inverseOf impact:impactOf ;
@@ -92,6 +93,7 @@ impact:hasImpact
 impact:impactCategory
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :impactCategory is a  general purpose property that relates a resource to an impact category."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "impact category"@en ;
   rdfs:range impact:ImpactCategory ;
 .
@@ -105,11 +107,13 @@ impact:impactOf
   rdfs:comment "The property :impactOf relates an impact to the cause of an impact."@en ;
   rdfs:domain impact:Impact ;
   rdfs:label "impact of"@en ;
+  rdfs:range rdfs:Resource ;
   owl:inverseOf impact:hasImpact ;
 .
 impact:impactedBy
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :impactedBy is a general purpose property that relates a resource to an impact that impacts it."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "impacted by"@en ;
   rdfs:range impact:Impact ;
   owl:inverseOf impact:impactsOn ;
@@ -119,11 +123,13 @@ impact:impactsOn
   rdfs:comment "The property :impactsOn relates an impact to something that is impacted by the impact."@en ;
   rdfs:domain impact:Impact ;
   rdfs:label "impacts on"@en ;
+  rdfs:range rdfs:Resource ;
   owl:inverseOf impact:impactedBy ;
 .
 impact:mitigates
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :mitigates is a general purpose property that relates a resource to an impact.    The property may be used to indicate that there is a positive relationship related to mitigation between the subject and object resources.  For example, it may be used to indicate that a project proposal proposes a project to mitigate an impact even thought the proposal itself does not mitigate the impact."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "mitigates"@en ;
   rdfs:range impact:Impact ;
 .

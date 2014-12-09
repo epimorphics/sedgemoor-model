@@ -32,13 +32,17 @@ model:Prediction
 model:assumes
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :assumes is a purpose property that may relate a resource to another which it assumes.  For example, one prediction such as a rise in global temperature may assume another prediction such as a forecast of of consumption of fossil fuels.   The domain and range are deliberately left open so that the property may be used to relate a variety of different kinds of resource."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "assumes"@en ;
+  rdfs:range rdfs:Resource ;
   owl:inverseOf model:isAssumedBy ;
 .
 model:isAssumedBy
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :isAssumedBy is a general purpose property that may be used to relate a resource to another which assumes it.  Both the domain and range are deliberately open so that the property may be used to relate a variety of different kinds of resources."@en ;
+  rdfs:domain rdfs:Resource ;
   rdfs:label "is assumed by"@en ;
+  rdfs:range rdfs:Resource ;
 .
 model:predictor
   rdf:type owl:ObjectProperty ;
