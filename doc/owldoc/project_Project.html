@@ -50,20 +50,67 @@ Project
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-powder-s:describedby min 0
+<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+project:actualStart exactly 1
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+project:expectedStart exactly 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-powder-s:describedby min 0
+rdfs:label min 0
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-dcterms:description min 0
+dct:description min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+project:expectedEnd exactly 1
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+project:proposal min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+impact:mitigates min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+wdrs:describedby min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+wdrs:describedby min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+owl:Thing</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+project:actualEnd exactly 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
@@ -75,54 +122,7 @@ project:resources min 0
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-project:proposal min 0
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-project:expectedEnd exactly 1
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-project:actualStart exactly 1
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
 project:resourcedBy min 0
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-impact:mitigates min 0
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-owl:Thing</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-project:expectedStart exactly 1
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-project:actualEnd exactly 1
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-rdfs:label min 0
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -144,7 +144,7 @@ rdfs:label min 0
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as rdfs:domain (project:subProjectOf,&nbsp;project:hasSubProject,&nbsp;project:expectedStart,&nbsp;project:expectedEnd,&nbsp;project:actualStart,&nbsp;project:actualEnd)</LI><LI>as rdfs:range (project:subProjectOf,&nbsp;project:hasSubProject)</LI></UL></FONT></TABLE><P>
+<LI>as rdfs:domain (project:operatesOn,&nbsp;project:isSubProjectOf,&nbsp;project:hasSubProject,&nbsp;project:expectedStart,&nbsp;project:expectedEnd,&nbsp;project:actualStart,&nbsp;project:actualEnd)</LI><LI>as rdfs:range (project:isSubProjectOf,&nbsp;project:hasSubProject)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.org" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

@@ -1,23 +1,18 @@
 <HTML>
 <HEAD>
-<TITLE>geo:SpatialThing</TITLE>
+<TITLE>model:Prediction</TITLE>
 </HEAD>
 <BODY>
 <FONT face="Verdana, Helvetica, sans-serif">
 <H2>
-<FONT SIZE="-1">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</FONT><BR>
-Class geo:SpatialThing</H2>
-<CENTER><IMG border="0" src="diagrams/geo_SpatialThing.jpg"></CENTER><P>
+<FONT SIZE="-1">http://data.sedgemoor.gov.uk/def/model/Prediction</FONT><BR>
+Class model:Prediction</H2>
+<CENTER><IMG border="0" src="diagrams/model_Prediction.jpg"></CENTER><P>
 <HR>
 <TR BGCOLOR="white">
 <TD>
 <B><FONT size="-1">rdf:type</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-rdfs:Class</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -31,10 +26,8 @@ owl:Class</FONT></TD></TR></TABLE>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/XSDLiteral.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything with spatial extent, i.e. size, shape, or position.
- e.g. people, places, bowling balls, as well as abstract areas like cubes.
-	
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+The class of predications.  A prediction is forcecast of some characteristic of the world.  For example a weather forecast is a prediction.  A prediction typically predicts some aspect of the world that will occur after the prediction is created.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -45,8 +38,8 @@ Anything with spatial extent, i.e. size, shape, or position.
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/XSDLiteral.gif" width="16" height="16"></TD><TD><FONT size="-1">
-SpatialThing
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+Prediction
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -55,6 +48,18 @@ SpatialThing
 <TD>
 <B><FONT size="-1">rdfs:subClassOf</FONT></B>
 <DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+model:isAssumedBy min 0
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMinCardinality.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+model:assumes min 0
+</FONT></TD></TR></TABLE>
+</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -68,7 +73,7 @@ owl:Thing</FONT></TD></TR></TABLE>
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as rdfs:domain (geo:longitude,&nbsp;geo:latitude,&nbsp;geo:altitude,&nbsp;tbcgeo:zoom,&nbsp;foaf:based near)</LI><LI>as rdfs:range (geo:location,&nbsp;foaf:based near)</LI><LI>as rdfs:subClassOf (<A href="geo_Point.html">geo:point</A>,&nbsp;<A href="foaf_Person.html">foaf:Person</A>)</LI></UL></FONT></TABLE><P>
+<LI>as rdfs:domain (model:predictor)</LI><LI>as rdfs:subClassOf (<A href="impact_PredicatedImpact.html">impact:PredicatedImpact</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.org" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>
