@@ -21,13 +21,24 @@ model:Prediction
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty model:dependsOn ;
+      owl:onProperty model:assumes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty model:isAssumedBy ;
     ] ;
 .
-model:dependsOn
+model:assumes
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The property :dependsOn is a general purpose property that may relate one resource to another on which it is dependent.  For example, one prediction such as a rise in global temperature may depend on another prediction such as a forecast of of consumption of fossil fuels.   This property is very general and has domain or range constraints."@en ;
-  rdfs:label "depends on"@en ;
+  rdfs:comment "The property :assumes is a purpose property that may relate a resource to another which it assumes.  For example, one prediction such as a rise in global temperature may assume another prediction such as a forecast of of consumption of fossil fuels.   The domain and range are deliberately left open so that the property may be used to relate a variety of different kinds of resource."@en ;
+  rdfs:label "assumes"@en ;
+  owl:inverseOf model:isAssumedBy ;
+.
+model:isAssumedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The property :isAssumedBy is a general purpose property that may be used to relate a resource to another which assumes it.  Both the domain and range are deliberately open so that the property may be used to relate a variety of different kinds of resources."@en ;
+  rdfs:label "is assumed by"@en ;
 .
 model:predictor
   rdf:type owl:ObjectProperty ;
