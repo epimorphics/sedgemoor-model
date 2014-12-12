@@ -124,11 +124,6 @@ project:Project
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty wdrs:describedby ;
     ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty wdrs:describedby ;
-    ] ;
   owl:equivalentClass <http://xmlns.com/foaf/0.1/Project> ;
 .
 project:Proposal
