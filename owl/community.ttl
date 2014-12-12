@@ -34,7 +34,7 @@ community:Community
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty community:communityClassification ;
+      owl:onProperty community:classification ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -67,14 +67,14 @@ community:Community
       owl:onProperty <http://www.w3.org/ns/locn#location> ;
     ] ;
 .
-community:communityClassification
+community:classification
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :classification is a  property that may be used to relate a community to a classification of people who are members of that community.   For example, members of a community might consist of 'mothers and toddlers' or 'the elderly' or football players."@en ;
   rdfs:domain community:Community ;
   rdfs:label "classification"@en ;
   rdfs:range community:Classification ;
 .
-community:communityClassificationScheme
+community:community-classification
   rdf:type skos:ConceptScheme ;
   rdfs:comment "A classification scheme for communities."@en ;
   rdfs:label "community classification scheme"@en ;
