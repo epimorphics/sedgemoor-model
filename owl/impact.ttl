@@ -90,17 +90,17 @@ impact:hasImpact
   rdfs:range impact:Impact ;
   owl:inverseOf impact:impactOf ;
 .
+impact:impact-category
+  rdf:type skos:ConceptScheme ;
+  rdfs:comment "A concept scheme of impact categories."@en ;
+  rdfs:label "impact category scheme"@en ;
+.
 impact:impactCategory
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The property :impactCategory is a  general purpose property that relates a resource to an impact category."@en ;
   rdfs:domain rdfs:Resource ;
   rdfs:label "impact category"@en ;
   rdfs:range impact:ImpactCategory ;
-.
-impact:impactCategoryScheme
-  rdf:type skos:ConceptScheme ;
-  rdfs:comment "A concept scheme of impact categories."@en ;
-  rdfs:label "impact category scheme"@en ;
 .
 impact:impactOf
   rdf:type owl:ObjectProperty ;
