@@ -1,8 +1,10 @@
 # baseURI: http://data.sedgemoor.gov.uk/def/cim-all
+# imports: http://data.sedgemoor.gov.uk/def/agent/
 # imports: http://data.sedgemoor.gov.uk/def/community/
 # imports: http://data.sedgemoor.gov.uk/def/model/
 # imports: http://data.sedgemoor.gov.uk/def/pim/
 # imports: http://data.sedgemoor.gov.uk/def/project/
+# imports: http://data.sedgemoor.gov.uk/def/version/
 
 # c14n-version: 3
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,8 +15,10 @@
   rdf:type owl:Ontology ;
   rdfs:comment "This is a container ontology.  It defines no terms of its own.  It exists to collect the various ontology modules used by the Community Impact Mitigation Fund project into a single umbrella ontology."@en ;
   rdfs:label "cim-all"@en ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/agent/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/community/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/model/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/pim/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/project/> ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/version/> ;
 .
