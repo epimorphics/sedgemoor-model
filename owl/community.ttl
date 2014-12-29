@@ -1,7 +1,8 @@
 # baseURI: http://data.sedgemoor.gov.uk/def/community/
-# imports: http://data.sedgemoor.gov.uk/def/pim/
+# imports: http://data.sedgemoor.gov.uk/def/impact/
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2007/05/powder-s
 # imports: http://www.w3.org/ns/locn
 
 # c14n-version: 3
@@ -13,11 +14,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 community:
   rdf:type owl:Ontology ;
-  rdfs:comment "An ontology for describing and characterizing communites."@en ;
+  rdfs:comment "An ontology for describing and characterizing communities."@en ;
   rdfs:label "community ontology"@en ;
-  owl:imports <http://data.sedgemoor.gov.uk/def/pim/> ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/impact/> ;
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/2007/05/powder-s> ;
   owl:imports <http://www.w3.org/ns/locn> ;
 .
 community:Classification
@@ -60,6 +62,11 @@ community:Community
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty rdfs:label ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://www.w3.org/2007/05/powder-s#describedby> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
