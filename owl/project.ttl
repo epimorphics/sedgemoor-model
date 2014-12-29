@@ -1,5 +1,6 @@
 # baseURI: http://data.sedgemoor.gov.uk/def/project/
-# imports: http://data.sedgemoor.gov.uk/def/pim/
+# imports: http://data.sedgemoor.gov.uk/def/impact/
+# imports: http://data.sedgemoor.gov.uk/def/item/
 # imports: http://www.w3.org/2007/05/powder-s
 # imports: http://xmlns.com/foaf/0.1/
 
@@ -15,7 +16,8 @@ project:
   rdf:type owl:Ontology ;
   rdfs:comment "An ontology module for describing projects."@en ;
   rdfs:label "project ontology"@en ;
-  owl:imports <http://data.sedgemoor.gov.uk/def/pim/> ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/impact/> ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/item/> ;
   owl:imports <http://www.w3.org/2007/05/powder-s> ;
   owl:imports <http://xmlns.com/foaf/0.1/> ;
 .
@@ -57,6 +59,11 @@ project:Project
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty <http://data.sedgemoor.gov.uk/def/impact/mitigates> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty project:operatesOn ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -150,6 +157,16 @@ project:ResourceSource
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty project:hasResourceRequest ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty project:resources ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty <http://purl.org/dc/terms/hasPart> ;
     ] ;
   rdfs:subClassOf [
@@ -186,6 +203,14 @@ project:expectedStart
   rdfs:label "expected start"@en ;
   rdfs:range project:DateOrDateTime ;
 .
+project:hasResourceRequest
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The property :hasResourceRequest relates a resource source to a request for resource from that source."@en ;
+  rdfs:domain project:ResourceSource ;
+  rdfs:label "has resource request"@en ;
+  rdfs:range rdfs:Resource ;
+  owl:inverseOf project:requestsResourcesFrom ;
+.
 project:hasSubProject
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Project may have subprojects.  The property :hasSubProject relates a parent project to an immediate child project."@en ;
@@ -206,7 +231,7 @@ project:operatesOn
   rdfs:comment "The property :operatesOn relates a project to the objects that the project is intended to create or change.   For example, a project that builds a bypass operates on the bypass; a project to build a children's play area in a park could be said to operate on either the park, or the playpen or both.  A project to widen a road operates on that road."@en ;
   rdfs:domain project:Project ;
   rdfs:label "operates on"@en ;
-  rdfs:range rdfs:Resource ;
+  rdfs:range <http://data.sedgemoor.gov.uk/def/item/Item> ;
 .
 project:proposal
   rdf:type owl:ObjectProperty ;
@@ -268,6 +293,7 @@ project:requestsResourcesFrom
   rdfs:domain rdfs:Resource ;
   rdfs:label "requires resources from"@en ;
   rdfs:range project:ResourceSource ;
+  owl:inverseOf project:hasResourceRequest ;
 .
 project:resourcedBy
   rdf:type owl:ObjectProperty ;
@@ -279,16 +305,9 @@ project:resourcedBy
 .
 project:resources
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The property :resources is a general purpose property that relates a source of resource, such as a Fund to a consumer of resources such as a project."@en ;
+  rdfs:comment "The property :resources is a general purpose property that relates a source of resource to a consumer of resources such as a project."@en ;
   rdfs:domain rdfs:Resource ;
   rdfs:label "resources"@en ;
   rdfs:range rdfs:Resource ;
   owl:inverseOf project:resourcedBy ;
-.
-<http://xmlns.com/foaf/0.1/Project>
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty wdrs:describedby ;
-    ] ;
 .
