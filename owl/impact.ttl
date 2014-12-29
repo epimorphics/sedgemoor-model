@@ -1,8 +1,9 @@
-# baseURI: http://data.sedgemoor.gov.uk/def/pim/
+# baseURI: http://data.sedgemoor.gov.uk/def/impact/
 # imports: http://data.sedgemoor.gov.uk/def/model/
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/2007/05/powder-s
+# imports: http://xmlns.com/foaf/0.1/
 
 # c14n-version: 3
 @prefix impact: <http://data.sedgemoor.gov.uk/def/impact/> .
@@ -16,7 +17,9 @@ impact:
   rdf:type owl:Ontology ;
   rdfs:comment "An ontology for describing impacts."@en ;
   rdfs:label "impact ontology"@en ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/model/> ;
   owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/2007/05/powder-s> ;
   owl:imports <http://xmlns.com/foaf/0.1/> ;
 .
@@ -146,11 +149,4 @@ impact:narrowerImpact
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty <http://data.sedgemoor.gov.uk/def/model/predictor> ;
     ] ;
-.
-<http://data.sedgemoor.gov.uk/def/pim/>
-  rdf:type owl:Ontology ;
-  owl:imports <http://data.sedgemoor.gov.uk/def/model/> ;
-  owl:imports <http://purl.org/dc/terms/> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <http://www.w3.org/2007/05/powder-s> ;
 .
