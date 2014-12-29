@@ -1,9 +1,9 @@
 # baseURI: http://data.sedgemoor.gov.uk/def/cim-all
 # imports: http://data.sedgemoor.gov.uk/def/agent/
 # imports: http://data.sedgemoor.gov.uk/def/community/
+# imports: http://data.sedgemoor.gov.uk/def/impact/
 # imports: http://data.sedgemoor.gov.uk/def/item/
 # imports: http://data.sedgemoor.gov.uk/def/model/
-# imports: http://data.sedgemoor.gov.uk/def/pim/
 # imports: http://data.sedgemoor.gov.uk/def/project/
 # imports: http://data.sedgemoor.gov.uk/def/version/
 
@@ -18,9 +18,9 @@
   rdfs:label "cim-all"@en ;
   owl:imports <http://data.sedgemoor.gov.uk/def/agent/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/community/> ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/impact/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/item/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/model/> ;
-  owl:imports <http://data.sedgemoor.gov.uk/def/pim/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/project/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/version/> ;
 .
