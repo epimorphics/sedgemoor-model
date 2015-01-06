@@ -1,4 +1,5 @@
 # baseURI: http://data.sedgemoor.gov.uk/def/project/
+# imports: http://data.sedgemoor.gov.uk/def/community/
 # imports: http://data.sedgemoor.gov.uk/def/impact/
 # imports: http://data.sedgemoor.gov.uk/def/item/
 # imports: http://www.w3.org/2007/05/powder-s
@@ -16,6 +17,7 @@ project:
   rdf:type owl:Ontology ;
   rdfs:comment "An ontology module for describing projects."@en ;
   rdfs:label "project ontology"@en ;
+  owl:imports <http://data.sedgemoor.gov.uk/def/community/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/impact/> ;
   owl:imports <http://data.sedgemoor.gov.uk/def/item/> ;
   owl:imports <http://www.w3.org/2007/05/powder-s> ;
@@ -99,13 +101,18 @@ project:Project
 .
 project:Proposal
   rdf:type owl:Class ;
-  rdfs:comment "The class of proposals. A distinction is made between a proposal and a document or set of documents that describe the proposal.   Instances of the class :Proposal correspond to the action of making or submitting a proposal.  The wdrs:describedby property may be used to relate a proposal to one or more documents that describe the proposal that is made."@en ;
+  rdfs:comment "The class of proposals. A distinction is made between a proposal and a document or set of documents that describe the proposal.   Instances of the class :Proposal correspond to the action of making or submitting a proposal.  The wdrs:describedby property may be used to relate a proposal to one or more documents that describe the proposal that is made. The property community:community may be used to relate a proposal to a community to which the proposal is relevant."@en ;
   rdfs:label "Proposal"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty project:proposalStatus ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://data.sedgemoor.gov.uk/def/community/community> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
