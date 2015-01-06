@@ -81,6 +81,13 @@ community:classification
   rdfs:label "classification"@en ;
   rdfs:range community:Classification ;
 .
+community:community
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The property :community is a general purpose property that may be used to relate a resource to a community."@en ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:label "community"@en ;
+  rdfs:range community:Community ;
+.
 community:community-classification
   rdf:type skos:ConceptScheme ;
   rdfs:comment "A classification scheme for communities."@en ;
